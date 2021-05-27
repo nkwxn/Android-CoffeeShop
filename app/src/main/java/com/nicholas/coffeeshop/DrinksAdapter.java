@@ -12,15 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+// 4. Buat Class yang inherits RecyclerView.Adapter, seperti ini
 public class DrinksAdapter extends RecyclerView.Adapter<DrinksAdapter.ViewHolder> {
     Context c;
     ArrayList<Drink> drinks;
 
+    // Initializer Drink Adapter, improt context dari context main view
     public DrinksAdapter(Context c, ArrayList<Drink> drinks) {
         this.c = c;
         this.drinks = drinks;
     }
 
+    // Ini buat narik view dari xml
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -29,6 +32,7 @@ public class DrinksAdapter extends RecyclerView.Adapter<DrinksAdapter.ViewHolder
         return new ViewHolder(v);
     }
 
+    // Ini buat tampilin data dari index ArrayList
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Drink drink = drinks.get(position);
@@ -43,6 +47,7 @@ public class DrinksAdapter extends RecyclerView.Adapter<DrinksAdapter.ViewHolder
         return drinks.size();
     }
 
+    // 5. Yg ini juga jangan lupa hehe
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgDrink;
         TextView txtName, txtDesc, txtPrice;

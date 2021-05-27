@@ -1,5 +1,6 @@
 package com.nicholas.coffeeshop;
 
+// 3. Jangan lupa buat object class untuk yang ingin ditampilkan dalam RecyclerView. Ini optional sih hehe
 public class Drink {
     private String name, desc;
     private int imagesrc;

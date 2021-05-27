@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+// 7. Janlup bikin ini dulu (eh tapi ini optional sih, w dulu bikin buat spacing)
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     private int space;
 

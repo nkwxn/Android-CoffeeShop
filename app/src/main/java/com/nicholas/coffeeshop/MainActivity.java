@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+// 6. Yang ini untuk otak dari MainActivity (Tampilan Utama)
 public class MainActivity extends AppCompatActivity {
     RecyclerView rvItems;
 
@@ -16,16 +17,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Untuk meng-import ID dari RecyclerView
         rvItems = findViewById(R.id.rvCoffeeList);
-        DrinksAdapter adapter = new DrinksAdapter(this, drinks());
+        DrinksAdapter adapter = new DrinksAdapter(this, drinks()); // RecyclerView Adapter
+
+        // Layout Manager
         RecyclerView.LayoutManager layoutManager
                 = new StaggeredGridLayoutManager
                 (2, StaggeredGridLayoutManager.VERTICAL);
+
+        // Set semua yang ada di adapter
         rvItems.setAdapter(adapter);
         rvItems.setLayoutManager(layoutManager);
         rvItems.addItemDecoration(new SpacesItemDecoration(10));
     }
 
+    // Data yang akan ditampilkan
     private ArrayList<Drink> drinks() {
         ArrayList<Drink> drinks = new ArrayList<>();
         drinks.add(new Drink("Caramel Frappuccino",
